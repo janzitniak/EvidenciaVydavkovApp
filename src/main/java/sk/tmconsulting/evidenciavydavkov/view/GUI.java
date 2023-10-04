@@ -93,6 +93,7 @@ public class GUI {
             public void valueChanged(ListSelectionEvent e) {
                 if (!e.getValueIsAdjusting()) {
                     try {
+                        indexVydavku = lstZoznamVydavkov.getSelectedIndex();
                         String vybranyVydavok = modelZoznamu.getElementAt(indexVydavku).toString();
                         //String regex = "(?<=\\d\\.\\s\\d\\.\\s\\d{4})\\s+";
                         String regex = " "; // To je znak podla ktoreho rozdelujeme text na jednotlive casti, v nasom pripade medzera
@@ -105,7 +106,6 @@ public class GUI {
                         cmbKategorie.setSelectedItem(jednotliveUdajeVydavku[2]);
                         datePicker.getJFormattedTextField().setText(jednotliveUdajeVydavku[3]);
 
-                        indexVydavku = lstZoznamVydavkov.getSelectedIndex();
 
                         System.out.println(Arrays.toString(jednotliveUdajeVydavku)); // Vypiseme jednotlive prvky pola
                         System.out.println(vybranyVydavok);
